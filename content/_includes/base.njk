@@ -1,0 +1,33 @@
+---
+title: Page title
+description: Description for opengraph tags
+og_type: website
+---
+
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    {% if site.environment == "production" %}
+      {% include 'google_analytics.njk' %}
+    {% endif %}
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>
+      {{ title }}
+    </title>
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism.css"
+      rel="stylesheet"
+    />
+    <link href="/main.css" rel="stylesheet" />
+    {% include 'meta_tags.njk' %}
+  </head>
+
+  <body>
+    {{ content | safe }}
+  </body>
+</html>
